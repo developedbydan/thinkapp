@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>ThinkApp</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img
+          src="./assets/menu_icon.png"
+          alt="menu"
+          class="menu-icon"
+          id="menu"
+        />
+        <button class="stats">
+          <img src="./assets/stats _icon.png" alt="stats" class="stats-icon" />
+          <span>Stats</span>
+        </button>
+      </nav>
+    </header>
+    <main>
+      <div class="disabled-overlay" id="overlay"></div>
+      <div id="final-score" class="final-score-disabled">
+        <h2>Your score is:</h2>
+        <h3 id="score"></h3>
+        <button id="restart">Restart</button>
+      </div>
+      <audio id="background-music" loop>
+        <source src="./assets/bck-song.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <audio id="button-effect">
+        <source src="./assets/button-pressed.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <aside class="disabled-side-menu" id="side-menu">
+        <div class="side-menu-header">
+          <img
+            src="./assets/x_icon.png"
+            alt="close"
+            class="close-icon"
+            id="close"
+          />
+          <div class="profile">
+            <h4>Jake</h4>
+            <img
+              src="./assets/profile.png"
+              alt="profile image"
+              class="profile-img"
+            />
+          </div>
+        </div>
+        <div class="side-menu-main">
+          <h2>Settings</h2>
+          <div class="audio">
+            <div class="icon-wrapper">
+              <img
+                src="./assets/note_icon.png"
+                alt="note icon"
+                class="side-menu-main-icons"
+              />
+              <h3>Music:</h3>
+            </div>
+
+            <label class="switch">
+              <input type="checkbox" id="music" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="audio">
+            <div class="icon-wrapper">
+              <img
+                src="./assets/speaker_icon.png"
+                alt="note icon"
+                class="side-menu-main-icons"
+              />
+              <h3>Sound:</h3>
+            </div>
+
+            <label class="switch">
+              <input type="checkbox" id="sound" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <button id="leave">
+            <img
+              src="./assets/leave_icon.png"
+              alt="leave icon"
+              class="leave-icon"
+            />Leave
+          </button>
+        </div>
+      </aside>
+
+      <div id="question-info">
+        <div class="info-bar">
+          <div class="question-number">
+            <img
+              src="./assets/question_icon.png"
+              alt="question-sign"
+              class="question-icon"
+            />
+            <h4 id="number"></h4>
+          </div>
+          <div class="points">
+            <h4 id="points"></h4>
+          </div>
+          <h4>timer</h4>
+        </div>
+
+        <h3 id="question"></h3>
+        <div id="answers" class="answers"></div>
+      </div>
+    </main>
+  </body>
+  <script src="index.js"></script>
+</html>
