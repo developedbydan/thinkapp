@@ -2,6 +2,31 @@ let currentQuestionIndex = 0;
 let questions = [];
 let correctCount = 0;
 let points = 0;
+let stopwatchInterval;
+let elapsedSeconds = 0;
+
+// Stopwatch
+
+const startStopwatch = () => {
+  stopwatchInterval = setInterval(() => {
+    elapsedSeconds++;
+    document.getElementById("stopwatch").innerText = formatTime(elapsedSeconds);
+  }, 1000);
+};
+
+const stopStopwatch = () => {
+  clearInterval(stopwatchInterval);
+};
+
+const resetStopwatch = () => {
+  clearInterval(stopwatchInterval);
+  elapsedSeconds = 0;
+  document.getElementById("stopwatch").innerText = "0s";
+};
+
+const formatTime = (seconds) => {
+  return `${seconds}s`;
+};
 
 // Fetch questions from API
 const fetchQuestions = async () => {
@@ -21,6 +46,9 @@ const decodeHTMLEntities = (text) => {
 
 // Display questions
 const showQuestion = () => {
+  resetStopwatch();
+  startStopwatch();
+
   const currentQuestion = questions[currentQuestionIndex];
   const numberElement = document.getElementById("number");
   const questionElement = document.getElementById("question");
@@ -63,6 +91,8 @@ const shuffleArray = (array) => {
 };
 
 const handleAnswerSelection = (selectedAnswer) => {
+  stopStopwatch();
+
   const correctAnswer = questions[currentQuestionIndex].correct_answer;
   const userAnswer = selectedAnswer;
   const isCorrect = userAnswer === correctAnswer;
