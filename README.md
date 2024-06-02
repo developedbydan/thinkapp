@@ -1,8 +1,8 @@
-# ThinkApp - Quiz Application
+# 💡 ThinkApp - Quiz Application 
 
 ThinkApp is an interactive quiz app that challenges users with multiple-choice questions and tracks their scores.
 
-## Features
+## 🚀 Features
 
 - Multiple-choice questions
 - Timer for each question
@@ -11,7 +11,7 @@ ThinkApp is an interactive quiz app that challenges users with multiple-choice q
 - Responsive design
 - Settings menu
 
-## Technologies Used
+## 🔧 Technologies Used
 
 - HTML5
 - CSS3
